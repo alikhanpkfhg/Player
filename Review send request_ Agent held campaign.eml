@@ -1,0 +1,470 @@
+Delivered-To: iamalikhan039@gmail.com
+Received: by 2002:a05:7301:578e:b0:368:1b82:5e66 with SMTP id ez14csp3509238dyc;
+        Mon, 26 Oct 2026 17:39:45 -0700 (PDT)
+X-Received: by 2002:a05:620a:4515:b0:93f:11ee:ba1a with SMTP id af79cd13be357-940ef960b17mr1226998985a.48.1793061585523;
+        Mon, 26 Oct 2026 17:39:45 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1793061585; cv=none;
+        d=google.com; s=arc-20260327;
+        b=JfC1WXS3HAOGLTnNToHoBYXfLAjuJj2WVd6kpXiXe4gomi7TUpI0cTB+kLpCD2/3GD
+         LyXdGgtI7XEhjNr0q6S7BaRRN+uQ2mwO2gGmVbn580Tfg4EYamkCUCEJkdHNHYy5USSf
+         4UixrS+Zc9LQKwFN6mR1z4qRFYUN6QkazytNSryFL04I4V3m0J9Ebn6WqswuPldV73Rf
+         vFLXxqpxixHut1lfYeWoxC7iVcSic+iDdlwSeZRrXMxSOrxCLWilnlAs0D1Lh/beoy7O
+         ivVaMXWVVEmO/XpnI7JQzK/nUM1gWyIro91gLpFQBZrAHdwGm3VK+tpKr4FfJC3eQ08k
+         o6KQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:content-transfer-encoding:mime-version:subject
+         :message-id:to:reply-to:from:date:dkim-signature:dkim-signature;
+        bh=HoGDp5/dwJLN1YbieqKKulP+fwoLi7mH3vwyG64gM4U=;
+        fh=9M8ZTVbfzQ2Nd0p8ivRA7MARFSuGRDbmPl6z6CwP6ZY=;
+        b=S209Uag+7zcoDQjj2zc+M84J52UfNwqhS0sG9BiaRUSBKWppc410HCwO0nYP44etO5
+         Paa57STJgn2qPvXUiSw90UWZCb01gU9zJ68UT/ilYp8AiYzdwOuFQoRf78Q3XnJlxnAG
+         Ve2Oz7ikKvVW+Muxn6uXjOMs2FJRuIpILpKguE51KMUWKSUNUBrI1QO+rDRVyNMAAPlP
+         Sv9bWnIrDeYx5HB6IGwC9gJfxQ0HBknPssFxoR98C3Xi0vZExYmSBn7FqHc9bdkhz3iG
+         5u0triBiqyZXLLAuP9mo6SdX5ALMvxfO80llkHf5JSbAhPV2hPHq3cdaoYG6q0IpZwnG
+         BMQA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nitrosend.com header.s=ns1 header.b=kt+0+U2f;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=Y2AH74bV;
+       spf=pass (google.com: domain of 010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com designates 54.240.9.6 as permitted sender) smtp.mailfrom=010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nitrosend.com
+Return-Path: <010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com>
+Received: from a9-6.smtp-out.amazonses.com (a9-6.smtp-out.amazonses.com. [54.240.9.6])
+        by mx.google.com with ESMTPS id af79cd13be357-940f0af0d14si712099385a.526.2026.10.26.17.39.45
+        for <iamalikhan039@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Oct 2026 17:39:45 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com designates 54.240.9.6 as permitted sender) client-ip=54.240.9.6;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nitrosend.com header.s=ns1 header.b=kt+0+U2f;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=Y2AH74bV;
+       spf=pass (google.com: domain of 010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com designates 54.240.9.6 as permitted sender) smtp.mailfrom=010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@bounces.nitrosend.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nitrosend.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ns1;
+	d=nitrosend.com; t=1793061585;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=VrsZKl9hetSRZ81QoB1dlRh1zKFs57cjn+6AQbLLndk=;
+	b=kt+0+U2fjLQnNC0lexV2iAmkev8f48rLmtiMXvoVAqlhJnM4aS2lwUJPN0LM2iT2
+	C8NpM7HnzK5zg9vGub1yHpgAOd4XJpTsRcn4rZklixslK0YOHuPDaEJ2gRMs26Yugea
+	m7PSFHpMaPhFCxncUGh5Vj1AR+bwb1crrtKr2al/Qd923qM9s/8xW2lkQjuloMkgL9+
+	h6/HMBajKGbn4h8Uwk3NOZwGaJJj9fjK2C+ntaN2+ILZBajs5z2f6+xCKuZPKPBr/gQ
+	QSeRA1OHOZsnY5WZ6Ekg+fw8TPTXmiXV94RelKQuLoEhiVit7R3j2hLjIGcOsSHNnmT
+	4pMX4o9/FA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1793061585;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=VrsZKl9hetSRZ81QoB1dlRh1zKFs57cjn+6AQbLLndk=;
+	b=Y2AH74bV8vaLWfC+JwnGesbaOXAdJ07tGsexb1rifWilZzo5tstLm46LkwzbegPL
+	lhHCQo/5nwNICiLOonn0s98a4i2Q+EwLqoPOhpwpd4xbUeugIrbgNVy9FKf1kvql7Re
+	9BrDS9/xO0soCakPT6Cq39ZGk8kYw9GkAYeuQ5eA=
+Date: Tue, 27 Oct 2026 00:39:44 +0000
+From: Nitrosend <contact@nitrosend.com>
+Reply-To: contact@nitrosend.com
+To: iamalikhan039@gmail.com
+Message-ID: <010001a17acc8026-8953095b-00b6-4d96-aafa-02bf65273385-000000@email.amazonses.com>
+Subject: Review send request: Agent held campaign
+MIME-Version: 1.0
+Content-Type: multipart/related;
+ boundary="--==_mimepart_6adff2d0cac20_129c849583b";
+ type="multipart/alternative"
+Content-Transfer-Encoding: 7bit
+X-Nitro-Account-Id: 2
+X-Nitro-Brand-Id: 4
+Feedback-ID: :1.us-east-1.FA8UVUTeNMCxW8SjfAaVmKzUSTmcfrlJQwmT0kCFwhl65Tir/rZr9vwH5/eljDvqT2G0fNLjZV7vCCxCdQCPX2VOrPUiTB+BBwJpkM2yFEaXrzy5wjNk/9KuCefdNlek1XabVFRXPgqP8KHyTCGS4Q==:1.us-east-1.nHU4fMVkbhRQvlyFazbuD5kEsWZ15/nz3Ozrqa4NslE=:AmazonSES
+X-SES-Outgoing: 2026.10.27-54.240.9.6
+
+
+----==_mimepart_6adff2d0cac20_129c849583b
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6adff2d0ca93f_129c8495764"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6adff2d0ca93f_129c8495764
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Freemilk asked to send "Approve this send" to 1 recipient. Nothing is sen=
+t until you approve it.
+CampaignAgent held campaignSubjectApprove this sendFromalikhanpkfhg <hell=
+o@alikhanpkfhg.nitrosend.net>Reply tohello@alikhanpkfhg.nitrosend.netAudi=
+ence1 contact listRecipients1WhenAs soon as you approveRequest expires30 =
+Oct 2026, 00:39 UTCReview send: https://app.nitrosend.com/my/map/reviews/=
+420 Opening the review page does not send anything. Approving authorizes =
+the email, audience and schedule shown above.
+Reply to this email for help.
+The Nitrosend team
+=E2=80=8A
+=E2=80=8Anitrosend it.: https://nitrosend.com
+314 Glen Osmond Road, Myrtle Bank SA 5064, Australia=
+
+----==_mimepart_6adff2d0ca93f_129c8495764
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org=
+/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office"><head><title></title><!--[if !mso]><!--=
+><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]=
+--><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-=
+8"><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+<style type=3D"text/css">
+#outlook a { padding: 0; }
+body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%; }
+table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; }
+img { border: 0; height: auto; line-height: 100%; outline: none; text-dec=
+oration: none; -ms-interpolation-mode: bicubic; }
+p { display: block; margin: 13px 0; }
+</style>
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+.mj-outlook-group-fix { width:100% !important; }
+</style>
+<![endif]-->
+<!--[if !mso]><!--><link href=3D"https://fonts.googleapis.com/css?family=3D=
+Roboto:300,400,500,700" rel=3D"stylesheet" type=3D"text/css"><style type=3D=
+"text/css">@import url(https://fonts.googleapis.com/css?family=3DRoboto:3=
+00,400,500,700);</style><!--<![endif]--><style type=3D"text/css">@media o=
+nly screen and (min-width:480px) { .mj-column-per-100 { width:100% !impor=
+tant; max-width:100%; }  }</style><style media=3D"screen and (min-width:4=
+80px)">.moz-text-html .mj-column-per-100 { width:100% !important; max-wid=
+th:100%; } </style><style type=3D"text/css">@import url('https://fonts.go=
+ogleapis.com/css2?family=3DInter:wght@400;600;700&display=3Dswap');h1{fon=
+t-family:Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans=
+-serif;font-size:28px;line-height:1.08;margin:0 0 .65em 0}h2{font-family:=
+Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;fo=
+nt-size:22px;line-height:1.12;margin:0 0 .55em 0}h3{font-family:Inter, -a=
+pple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:1=
+8px;line-height:1.18;margin:0 0 .5em 0}h4{font-family:Inter, -apple-syste=
+m, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-h=
+eight:1.2;margin:0 0 .45em 0}h1:last-child,h2:last-child,h3:last-child,h4=
+:last-child{margin-bottom:0}@media only screen and (max-width:479px){.nit=
+ro-email-section-type--button table{width:100%!important}.nitro-email-sec=
+tion-type--button a{display:block!important}}</style></head><body style=3D=
+"word-spacing:normal;background-color:#ffffff;"><div lang=3D"und" dir=3D"=
+auto" style=3D"background-color:#ffffff;"><!--[if mso | IE]><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D=
+"center" width=3D"600" class=3D"nitro-email-section nitro-email-section-t=
+ype--text-outlook" style=3D"width:600px;"><tr><td style=3D"line-height:0p=
+x;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"=
+nitro-email-section nitro-email-section-type--text" style=3D"margin:0px a=
+uto;max-width:600px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" align=3D"center" style=3D"width:100%;"><tbody><=
+tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"=
+><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation"><tr><![endif]--><!--[if mso | IE]><td style=3D"ve=
+rtical-align:top;width:600px;"><![endif]--><div class=3D"mj-outlook-group=
+-fix mj-column-per-100" style=3D"font-size:0px;text-align:left;direction:=
+ltr;display:inline-block;vertical-align:top;width:100%;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"10=
+0%" style=3D"vertical-align:top;"><tbody><tr><td align=3D"left" class=3D"=
+nitro-email-section nitro-email-section-type--text" style=3D"font-size:0p=
+x;padding:4px 25px;word-break:break-word;"><div style=3D"font-family:Inte=
+r, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-s=
+ize:16px;line-height:1.5;text-align:left;color:#1a1a1a;"><p style=3D"font=
+-size:15px; color:#1a1a1a; line-height:1.65; margin:0 0 14px 0; padding-b=
+ottom: 0">Freemilk asked to send &quot;Approve this send&quot; to 1 recip=
+ient. Nothing is sent until you approve it.</p></div></td></tr></tbody></=
+table></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></t=
+able><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--><!--[if mso | IE]><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D"center" width=3D"=
+600" class=3D"nitro-email-section nitro-email-section-type--text-outlook"=
+ style=3D"width:600px;"><tr><td style=3D"line-height:0px;font-size:0px;ms=
+o-line-height-rule:exactly;"><![endif]--><div class=3D"nitro-email-sectio=
+n nitro-email-section-type--text" style=3D"margin:0px auto;max-width:600p=
+x;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" align=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D"d=
+irection:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | IE=
+]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation"><tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-align:top;=
+width:600px;"><![endif]--><div class=3D"mj-outlook-group-fix mj-column-pe=
+r-100" style=3D"font-size:0px;text-align:left;direction:ltr;display:inlin=
+e-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"verti=
+cal-align:top;"><tbody><tr><td align=3D"left" class=3D"nitro-email-sectio=
+n nitro-email-section-type--text" style=3D"font-size:0px;padding:4px 25px=
+;word-break:break-word;"><div style=3D"font-family:Inter, -apple-system, =
+'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-heig=
+ht:1.5;text-align:left;color:#1a1a1a;"><table style=3D"width:100%;border-=
+collapse:collapse;margin:0 0 20px 0;"><tr style=3D"border-bottom:1px soli=
+d #f3f4f6;"><td style=3D"padding:8px 0;color:#6b7280;font-size:14px;">Cam=
+paign</td><td style=3D"padding:8px 0;color:#1a1a1a;text-align:right;font-=
+weight:600;font-size:14px;">Agent held campaign</td></tr><tr style=3D"bor=
+der-bottom:1px solid #f3f4f6;"><td style=3D"padding:8px 0;color:#6b7280;f=
+ont-size:14px;">Subject</td><td style=3D"padding:8px 0;color:#1a1a1a;text=
+-align:right;font-weight:600;font-size:14px;">Approve this send</td></tr>=
+<tr style=3D"border-bottom:1px solid #f3f4f6;"><td style=3D"padding:8px 0=
+;color:#6b7280;font-size:14px;">From</td><td style=3D"padding:8px 0;color=
+:#1a1a1a;text-align:right;font-weight:600;font-size:14px;">alikhanpkfhg &=
+lt;hello@alikhanpkfhg.nitrosend.net&gt;</td></tr><tr style=3D"border-bott=
+om:1px solid #f3f4f6;"><td style=3D"padding:8px 0;color:#6b7280;font-size=
+:14px;">Reply to</td><td style=3D"padding:8px 0;color:#1a1a1a;text-align:=
+right;font-weight:600;font-size:14px;">hello@alikhanpkfhg.nitrosend.net</=
+td></tr><tr style=3D"border-bottom:1px solid #f3f4f6;"><td style=3D"paddi=
+ng:8px 0;color:#6b7280;font-size:14px;">Audience</td><td style=3D"padding=
+:8px 0;color:#1a1a1a;text-align:right;font-weight:600;font-size:14px;">1 =
+contact list</td></tr><tr style=3D"border-bottom:1px solid #f3f4f6;"><td =
+style=3D"padding:8px 0;color:#6b7280;font-size:14px;">Recipients</td><td =
+style=3D"padding:8px 0;color:#1a1a1a;text-align:right;font-weight:600;fon=
+t-size:14px;">1</td></tr><tr style=3D"border-bottom:1px solid #f3f4f6;"><=
+td style=3D"padding:8px 0;color:#6b7280;font-size:14px;">When</td><td sty=
+le=3D"padding:8px 0;color:#1a1a1a;text-align:right;font-weight:600;font-s=
+ize:14px;">As soon as you approve</td></tr><tr style=3D""><td style=3D"pa=
+dding:8px 0;color:#6b7280;font-size:14px;">Request expires</td><td style=3D=
+"padding:8px 0;color:#1a1a1a;text-align:right;font-weight:600;font-size:1=
+4px;">30 Oct 2026, 00:39 UTC</td></tr></table></div></td></tr></tbody></t=
+able></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></ta=
+ble><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></=
+tr></table><![endif]--><!--[if mso | IE]><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" align=3D"center" width=3D"600=
+" class=3D"nitro-email-section nitro-email-section-type--button-outlook" =
+style=3D"width:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso=
+-line-height-rule:exactly;"><![endif]--><div class=3D"nitro-email-section=
+ nitro-email-section-type--button" style=3D"margin:0px auto;max-width:600=
+px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" align=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D"=
+direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | I=
+E]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation"><tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-align:top=
+;width:600px;"><![endif]--><div class=3D"mj-outlook-group-fix mj-column-p=
+er-100" style=3D"font-size:0px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"verti=
+cal-align:top;"><tbody><tr><td align=3D"left" vertical-align=3D"middle" c=
+lass=3D"nitro-email-section nitro-email-section-type--button" style=3D"fo=
+nt-size:0px;padding:32px 30px 32px 30px;word-break:break-word;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"border-collapse:separate;line-height:100%;"><tbody><tr><td align=3D"=
+center" bgcolor=3D"#0c0c0c" role=3D"presentation" valign=3D"middle" style=
+=3D"border:none;border-radius:4px;cursor:auto;mso-padding-alt:14px 32px;b=
+ackground:#0c0c0c;"><a href=3D"https://app.nitrosend.com/my/map/reviews/4=
+20" target=3D"_blank" style=3D"display:inline-block;background:#0c0c0c;co=
+lor:#ffffff;font-family:Inter, -apple-system, 'Segoe UI', Roboto, Helveti=
+ca, Arial, sans-serif;font-size:16px;font-weight:600;line-height:120%;mar=
+gin:0;text-decoration:none;text-transform:none;padding:14px 32px;mso-padd=
+ing-alt:0px;border-radius:4px;">Review send</a></td></tr></tbody></table>=
+</td></tr></tbody></table></div><!--[if mso | IE]></td><![endif]--><!--[i=
+f mso | IE]></tr></table><![endif]--></td></tr></tbody></table></div><!--=
+[if mso | IE]></td></tr></table><![endif]--><!--[if mso | IE]><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D=
+"center" width=3D"600" class=3D"nitro-email-section nitro-email-section-t=
+ype--text-outlook" style=3D"width:600px;"><tr><td style=3D"line-height:0p=
+x;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"=
+nitro-email-section nitro-email-section-type--text" style=3D"margin:0px a=
+uto;max-width:600px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" align=3D"center" style=3D"width:100%;"><tbody><=
+tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"=
+><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation"><tr><![endif]--><!--[if mso | IE]><td style=3D"ve=
+rtical-align:top;width:600px;"><![endif]--><div class=3D"mj-outlook-group=
+-fix mj-column-per-100" style=3D"font-size:0px;text-align:left;direction:=
+ltr;display:inline-block;vertical-align:top;width:100%;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"10=
+0%" style=3D"vertical-align:top;"><tbody><tr><td align=3D"left" class=3D"=
+nitro-email-section nitro-email-section-type--text" style=3D"font-size:0p=
+x;padding:4px 25px;word-break:break-word;"><div style=3D"font-family:Inte=
+r, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-s=
+ize:16px;line-height:1.5;text-align:left;color:#1a1a1a;"><p style=3D"font=
+-size:13px; color:#6b7280; line-height:1.65; margin:0 0 14px 0; padding-b=
+ottom: 0">Opening the review page does not send anything. Approving autho=
+rizes the email, audience and schedule shown above.</p></div></td></tr></=
+tbody></table></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]>=
+</tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--><!--[if mso | IE]><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D"center" w=
+idth=3D"600" class=3D"nitro-email-section nitro-email-section-type--text-=
+outlook" style=3D"width:600px;"><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"nitro-emai=
+l-section nitro-email-section-type--text" style=3D"margin:0px auto;max-wi=
+dth:600px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" align=3D"center" style=3D"width:100%;"><tbody><tr><td styl=
+e=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if ms=
+o | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation"><tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-alig=
+n:top;width:600px;"><![endif]--><div class=3D"mj-outlook-group-fix mj-col=
+umn-per-100" style=3D"font-size:0px;text-align:left;direction:ltr;display=
+:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D=
+"vertical-align:top;"><tbody><tr><td align=3D"left" class=3D"nitro-email-=
+section nitro-email-section-type--text" style=3D"font-size:0px;padding:4p=
+x 25px;word-break:break-word;"><div style=3D"font-family:Inter, -apple-sy=
+stem, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;lin=
+e-height:1.5;text-align:left;color:#1a1a1a;"><p style=3D"font-size:14px;c=
+olor:#6b7280;margin:0 0 2px 0;">Reply to this email for help.</p><p style=
+=3D"font-size:14px; color:#1a1a1a; font-weight:600; margin:0; padding-bot=
+tom: 0">The Nitrosend team</p></div></td></tr></tbody></table></div><!--[=
+if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" align=3D"center" width=3D"600" class=3D"nit=
+ro-email-section nitro-email-section-type--spacer-outlook" style=3D"width=
+:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div class=3D"nitro-email-section nitro-email-s=
+ection-type--spacer" style=3D"margin:0px auto;max-width:600px;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" alig=
+n=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;=
+font-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><!=
+[endif]--><!--[if mso | IE]><td style=3D"vertical-align:top;width:600px;"=
+><![endif]--><div class=3D"mj-outlook-group-fix mj-column-per-100" style=3D=
+"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertica=
+l-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" width=3D"100%" style=3D"vertical-align:top;=
+"><tbody><tr><td class=3D"nitro-email-section nitro-email-section-type--s=
+pacer" style=3D"font-size:0px;padding:0;word-break:break-word;"><div styl=
+e=3D"height:40px;line-height:40px;">&#8202;</div></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></table=
+><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr>=
+</table><![endif]--><!--[if mso | IE]><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" align=3D"center" width=3D"600"=
+ class=3D"nitro-email-section nitro-email-section-type--divider-outlook" =
+style=3D"width:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso=
+-line-height-rule:exactly;"><![endif]--><div class=3D"nitro-email-section=
+ nitro-email-section-type--divider" style=3D"margin:0px auto;max-width:60=
+0px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" align=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D=
+"direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | =
+IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation"><tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-align:to=
+p;width:600px;"><![endif]--><div class=3D"mj-outlook-group-fix mj-column-=
+per-100" style=3D"font-size:0px;text-align:left;direction:ltr;display:inl=
+ine-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"ve=
+rtical-align:top;"><tbody><tr><td align=3D"center" class=3D"nitro-email-s=
+ection nitro-email-section-type--divider" style=3D"font-size:0px;padding:=
+0;word-break:break-word;"><p style=3D"border-top:solid 1px #E5E7EB;font-s=
+ize:1px;margin:0px auto;width:100%;"></p><!--[if mso | IE]><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D"ce=
+nter" width=3D"600px" style=3D"border-top:solid 1px #E5E7EB;font-size:1px=
+;margin:0px auto;width:600px;"><tr><td style=3D"height:0;line-height:0;">=
+&nbsp;</td></tr></table><![endif]--></td></tr></tbody></table></div><!--[=
+if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" align=3D"center" width=3D"600" class=3D"nit=
+ro-email-section nitro-email-section-type--spacer-outlook" style=3D"width=
+:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div class=3D"nitro-email-section nitro-email-s=
+ection-type--spacer" style=3D"margin:0px auto;max-width:600px;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" alig=
+n=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;=
+font-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><!=
+[endif]--><!--[if mso | IE]><td style=3D"vertical-align:top;width:600px;"=
+><![endif]--><div class=3D"mj-outlook-group-fix mj-column-per-100" style=3D=
+"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertica=
+l-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" width=3D"100%" style=3D"vertical-align:top;=
+"><tbody><tr><td class=3D"nitro-email-section nitro-email-section-type--s=
+pacer" style=3D"font-size:0px;padding:0;word-break:break-word;"><div styl=
+e=3D"height:28px;line-height:28px;">&#8202;</div></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]></tr></table=
+><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr>=
+</table><![endif]--><!--[if mso | IE]><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" align=3D"center" width=3D"600"=
+ class=3D"nitro-email-section nitro-email-section-type--text-outlook" sty=
+le=3D"width:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso-li=
+ne-height-rule:exactly;"><![endif]--><div class=3D"nitro-email-section ni=
+tro-email-section-type--text" style=3D"margin:0px auto;max-width:600px;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" align=3D"center" style=3D"width:100%;"><tbody><tr><td style=3D"direc=
+tion:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n"><tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-align:top;widt=
+h:600px;"><![endif]--><div class=3D"mj-outlook-group-fix mj-column-per-10=
+0" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bl=
+ock;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"vertical=
+-align:top;"><tbody><tr><td align=3D"left" class=3D"nitro-email-section n=
+itro-email-section-type--text" style=3D"font-size:0px;padding:4px 25px;wo=
+rd-break:break-word;"><div style=3D"font-family:Inter, -apple-system, 'Se=
+goe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:=
+1.5;text-align:left;color:#1a1a1a;"><p style=3D"text-align:center; margin=
+:0 0 14px 0; padding-bottom: 0"><a href=3D"https://nitrosend.com" data-ni=
+trosend-branding=3D"true" data-nitrosend-branding-variant=3D"regular" sty=
+le=3D"text-decoration:none;color:#1a1a1a;font-family:Inter,sans-serif;fon=
+t-size:16px;"><span style=3D"font-weight:600;">nitrosend</span> <em style=
+=3D"font-style:italic;">it</em><span style=3D"color:#FF4D00;font-weight:6=
+00;">.</span></a></p></div></td></tr></tbody></table></div><!--[if mso | =
+IE]></td><![endif]--><!--[if mso | IE]></tr></table><![endif]--></td></tr=
+></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><!=
+--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" align=3D"center" width=3D"600" class=3D"nitro-email-=
+section nitro-email-section-type--text-outlook" style=3D"width:600px;"><t=
+r><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div class=3D"nitro-email-section nitro-email-section-type=
+--text" style=3D"margin:0px auto;max-width:600px;"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" align=3D"center" =
+style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px=
+;padding:0;text-align:center;"><!--[if mso | IE]><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><![endif]--><!-=
+-[if mso | IE]><td style=3D"vertical-align:top;width:600px;"><![endif]-->=
+<div class=3D"mj-outlook-group-fix mj-column-per-100" style=3D"font-size:=
+0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top=
+;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"vertical-align:top;"><tbody><t=
+r><td align=3D"left" class=3D"nitro-email-section nitro-email-section-typ=
+e--text" style=3D"font-size:0px;padding:4px 25px;word-break:break-word;">=
+<div style=3D"font-family:Inter, -apple-system, 'Segoe UI', Roboto, Helve=
+tica, Arial, sans-serif;font-size:16px;line-height:1.5;text-align:left;co=
+lor:#1a1a1a;"><p style=3D"text-align:center; font-size:11px; color:#9CA3A=
+F; margin:0; padding-bottom: 0">314 Glen Osmond Road, Myrtle Bank SA 5064=
+, Australia</p></div></td></tr></tbody></table></div><!--[if mso | IE]></=
+td><![endif]--><!--[if mso | IE]></tr></table><![endif]--></td></tr></tbo=
+dy></table></div><!--[if mso | IE]></td></tr></table><![endif]--></div><i=
+mg src=3D"https://track.send.nitrosend.com/t/o/eyJfcmFpbHMiOnsiZGF0YSI6ey=
+JhY2NvdW50X2lkIjoyLCJicmFuZF9pZCI6NCwibW9kZSI6ImxpdmUiLCJsdiI6MiwibWVzc2F=
+nZV9pZCI6NTIxNTYxNSwiY29udGFjdF9pZCI6NDA1ODg2OCwiaG9zdCI6InRyYWNrLnNlbmQu=
+bml0cm9zZW5kLmNvbSJ9LCJleHAiOiIyMDI3LTAxLTI1VDAwOjM5OjQ0LjgwOVoiLCJwdXIiO=
+iJlbWFpbF90cmFja2luZyJ9fQ=3D=3D--84bba968e29204b9f8bccf01b92d48bd9b19a70d=
+" width=3D"1" height=3D"1" border=3D"0" alt=3D"" /></body></html>=
+
+----==_mimepart_6adff2d0ca93f_129c8495764--
+
+----==_mimepart_6adff2d0cac20_129c849583b
+Content-Type: application/ld+json;
+ charset=UTF-8;
+ profile="https://mailschema.org/profiles/map/0.3"
+Content-Transfer-Encoding: quoted-printable
+Content-Purpose: Machine-readable
+
+{"@id":"urn:uuid:a1d6776c-01e4-5991-bbdb-211841091767","type":{"id":"http=
+s://mailschema.org/types/campaign-send-approval","version":"0.1","contrac=
+tDigest":"sha-256:de3c88a0712adb1d0c6e82f437b825c83520d8e1c44c7b032a2cfcf=
+e5ce55731"},"@type":"MailAction","human":{"url":"https://app.nitrosend.co=
+m/my/map/reviews/420"},"terms":{"id":"https://api.nitrosend.com/v1/my/map=
+/approvals/420","version":"sha-256:6c005f88fa3682cd88318cfe9cdc1e7ac12b26=
+35cda50ad678282a6d5f4b2940"},"details":{"sender":{"name":"alikhanpkfhg","=
+mailbox":"hello@alikhanpkfhg.nitrosend.net","replyTo":"hello@alikhanpkfhg=
+.nitrosend.net"},"content":{"id":"https://api.nitrosend.com/v1/my/templat=
+es/24703","title":"Approve this send","digest":"sha-256:56170033fb5fee991=
+28977c07dd66fe3ef736b314d89f725f610a59e9780c44c","revision":"2"},"summary=
+":"Freemilk asked to send \"Approve this send\" to 1 recipient.","audienc=
+e":{"id":"urn:nitrosend:campaign-send:3328:audience","count":1,"label":"1=
+ contact list","revision":"03773f7d526e90a361a99046386c847cc4df9a0f328a61=
+9c5cbfd448822e58ee"},"schedule":{"mode":"immediate"},"requester":"Freemil=
+k"},"profile":"https://mailschema.org/profiles/map/0.3","service":{"id":"=
+https://api.nitrosend.com","tenant":"urn:nitrosend:brand:13660"},"subject=
+":{"id":"https://api.nitrosend.com/v1/my/campaigns/15365","title":"Agent =
+held campaign"},"@context":"https://mailschema.org/contexts/map-0.3.jsonl=
+d","issuedAt":"2026-10-27T00:39:44Z","expiresAt":"2026-10-30T00:39:44Z","=
+recipient":"iamalikhan039@gmail.com","inLanguage":"en","operations":[{"id=
+":"approve"},{"id":"decline"}]}=
+
+----==_mimepart_6adff2d0cac20_129c849583b--
