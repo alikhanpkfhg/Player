@@ -1,0 +1,247 @@
+Delivered-To: alikhanbest10@gmail.com
+Received: by 2002:ac0:f10a:0:b0:408:6116:f412 with SMTP id t10csp3373927iml;
+        Mon, 26 Oct 2026 17:40:11 -0700 (PDT)
+X-Received: by 2002:ad4:5cc2:0:b0:914:39cd:e64d with SMTP id 6a1803df08f44-91c48e51469mr152237426d6.44.1793061611609;
+        Mon, 26 Oct 2026 17:40:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1793061611; cv=none;
+        d=google.com; s=arc-20260327;
+        b=sREnYGTdvMWe9SDC73PcLZbxXKh5gpRzVher1FtuWiigWJY5ZhaIpFqyw82J24pJb9
+         Xb1hBkwfNsnFSoxDrmaQrGYLF18jVf+mXft6Q79uA7DQpS7gXiKRw1NM/WCxogkgWwZf
+         s4P9Q1hc2RPNnY/iPsPz9YSmtqxNHx2eeWNiqAaYjpHujwetjwkDTqMBZBcyj1VeTaty
+         cm7/Xn4adW7sgw9BuKV6CBWyfb2eiTjLeRfJOXKhqIwYlYoj2AZ1TlDhOvae/fGLA2Ny
+         WJ8ZG13BUEkIaXjOaIlEtPOD4DFJ0jQfLfxZNOVy+jWnzFhMEV90EN9w2rbWL07BdWGQ
+         EQUA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:message-id:list-unsubscribe:list-unsubscribe-post
+         :mime-version:subject:to:reply-to:from:date:dkim-signature
+         :dkim-signature;
+        bh=6qKFopJr5DbE/bvKEquuY9aTk5N37PB0eaKxgMslSrA=;
+        fh=87NukdoIkYz2Te/AKn9NNaRT5hvCwWGtx49hu0Enzfs=;
+        b=bFwxCYCGwizdnRHJXQGpa2iXokl74TdNIudg2a4rzO1pspZffZgGbr+hOr0DDJ3VaN
+         iqCWayJPHdwO779JGuDY4YzNkhD2Zo3T8a2tJMFCopnC933q3RKucyLbXiW2DohbAWsW
+         cGTX57Xtd4j6KPjYf0rTyOR/jUCle+f7mfk1GsChNITWQ/YwnnsDQLwBUPRNca720x9l
+         XUxU7y3ZYFwzCRxPD4JdZmSy39/bHKrvbiyaFoFAM74rzrNVnHhanL2z0rArA71kjf/2
+         o1Ngc6kzii5wgUfemo109anm3FCT11lzs6GsK/NNDI3EhjsGrhtzjulRYt0vlTDhWhjf
+         Hqog==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nitrosend.net header.s=45qoxyruip3ripp3ozubg335dhcxu26y header.b=c6VjZXjZ;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=WzAXPXLD;
+       spf=pass (google.com: domain of 010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net designates 54.240.9.8 as permitted sender) smtp.mailfrom=010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nitrosend.net
+Return-Path: <010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net>
+Received: from a9-8.smtp-out.amazonses.com (a9-8.smtp-out.amazonses.com. [54.240.9.8])
+        by mx.google.com with ESMTPS id 6a1803df08f44-91c4cfec73bsi98488026d6.649.2026.10.26.17.40.11
+        for <alikhanbest10@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Oct 2026 17:40:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net designates 54.240.9.8 as permitted sender) client-ip=54.240.9.8;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nitrosend.net header.s=45qoxyruip3ripp3ozubg335dhcxu26y header.b=c6VjZXjZ;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=WzAXPXLD;
+       spf=pass (google.com: domain of 010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net designates 54.240.9.8 as permitted sender) smtp.mailfrom=010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@bounces.nitrosend.net;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nitrosend.net
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=45qoxyruip3ripp3ozubg335dhcxu26y; d=nitrosend.net; t=1793061611;
+	i=@alikhanpkfhg.nitrosend.net;
+	h=Date:From:Reply-To:To:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Message-ID;
+	bh=4t9uxXB4/SSjmskgwFgjj6um+3rsOXyOh2YiwhDUw58=;
+	b=c6VjZXjZz5YvHMQelJYMjgMBrQBuUd+qEXOS0SnN6WczT8tPORWzNDafaMf10JCr
+	tb8M7y3lDACKdqUu14igA5zVdnSim13SJf0M+MhZxa0heh7uo3YA68JcHcYu76nbwHl
+	qu0XmJcLjZhRlAW10hUM9CRsFVzzi9HavHlqQ4T2X42O8rTwJqxoOT7+hG6CjDupgGr
+	vH8t4qOLvsu6wnsy3awSiR6Hr9SlkCVpMCaOHNIrBj3Mu0XMokcbw5M7jXnME1puWLn
+	nRdkkC76b03sEl99TvhX4xUWJXFntPPYH+pDCNRPr8n+wNgvYUjg86lOkaEAI4Mlibg
+	8GKIV8UXSA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1793061611;
+	h=Date:From:Reply-To:To:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Message-ID:Feedback-ID;
+	bh=4t9uxXB4/SSjmskgwFgjj6um+3rsOXyOh2YiwhDUw58=;
+	b=WzAXPXLDHTcgpVhdoOC9Cofx7++50LrIWxj8NR4yhHsNlH4LPNquwjlH8GQDrkBO
+	PtZgMPXfc/wyZ/G1oL5t5K/cplFBX/CwuUXT+gCW07SG/MV6v/WjqPrfJUemsHZ0egG
+	xzDZSmjnVikRuCv7ZzhnUy3OT4sjM4SiCKsHGnQU=
+Date: Tue, 27 Oct 2026 00:40:10 +0000
+From: alikhanpkfhg <hello@alikhanpkfhg.nitrosend.net>
+Reply-To: hello@alikhanpkfhg.nitrosend.net
+To: alikhanbest10@gmail.com
+Subject: Approve this send
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_949176_2003346509.1793061611111"
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Nitro-Message-Id: 5215616
+X-Nitro-Account-Id: 13492
+X-Nitro-Flow-Id: 16939
+List-Unsubscribe: <https://api.nitrosend.com/unsubscribe/955e0174-4538-4e2f-93c4-3fa2080f3508>
+X-Nitro-Brand-Id: 13660
+X-Nitro-Contact-Id: 4059157
+Message-ID: <010001a17acce532-fcca71a7-1cf5-49f1-81d1-c80ff617cdc6-000000@email.amazonses.com>
+Feedback-ID: :1.us-east-1.USDJQ30f74enNJzeyvTg2Cbr0bl4NY7qsLAm0OCgZ0L9n+kFXRKdSejqtUf9NAxqAZIL8LBY8gb5EePd3/F+4jU4OSJkJGVk/hNYDGXFJ7tsyhGaqFkDxssGnaM826KwR7kMb9jALCOhhUQsW9kPvA==:1.us-east-1.nHU4fMVkbhRQvlyFazbuD5kEsWZ15/nz3Ozrqa4NslE=:AmazonSES
+X-SES-Outgoing: 2026.10.27-54.240.9.8
+
+------=_Part_949176_2003346509.1793061611111
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+alikhanpkfhgAgent requested this send
+Composed by an API-key agent under Safe Mode. The account owner decides before it leaves.
+alikhanpkfhg
+Gujranwala, Punjab, Pakistan
+Unsubscribe: https://api.nitrosend.com/unsubscribe/955e0174-4538-4e2f-93c4-3fa2080f3508
+------=_Part_949176_2003346509.1793061611111
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1=
+999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas=
+-microsoft-com:office:office"><head><title></title><!--[if !mso]><!--><meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]--><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"><meta n=
+ame=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1">
+<style type=3D"text/css">
+#outlook a { padding: 0; }
+body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size=
+-adjust: 100%; }
+table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; }
+img { border: 0; height: auto; line-height: 100%; outline: none; text-decor=
+ation: none; -ms-interpolation-mode: bicubic; }
+p { display: block; margin: 13px 0; }
+</style>
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+.mj-outlook-group-fix { width:100% !important; }
+</style>
+<![endif]-->
+<!--[if !mso]><!--><link href=3D"https://fonts.googleapis.com/css?family=3D=
+Roboto:300,400,500,700" rel=3D"stylesheet" type=3D"text/css"><style type=3D=
+"text/css">@import url(https://fonts.googleapis.com/css?family=3DRoboto:300=
+,400,500,700);</style><!--<![endif]--><style type=3D"text/css">@media only =
+screen and (min-width:480px) { .mj-column-per-100 { width:100% !important; =
+max-width:100%; }  }</style><style media=3D"screen and (min-width:480px)">.=
+moz-text-html .mj-column-per-100 { width:100% !important; max-width:100%; }=
+ </style><style type=3D"text/css">@import url('https://fonts.googleapis.com=
+/css2?family=3DInter:wght@400;600;700&display=3Dswap');h1{font-family:Inter=
+, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size=
+:28px;line-height:1.08;margin:0 0 .65em 0}h2{font-family:Inter, -apple-syst=
+em, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:22px;line-he=
+ight:1.12;margin:0 0 .55em 0}h3{font-family:Inter, -apple-system, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif;font-size:18px;line-height:1.18;mar=
+gin:0 0 .5em 0}h4{font-family:Inter, -apple-system, 'Segoe UI', Roboto, Hel=
+vetica, Arial, sans-serif;font-size:16px;line-height:1.2;margin:0 0 .45em 0=
+}h1:last-child,h2:last-child,h3:last-child,h4:last-child{margin-bottom:0}@m=
+edia only screen and (max-width:479px){.nitro-email-section-type--button ta=
+ble{width:100%!important}.nitro-email-section-type--button a{display:block!=
+important}}</style></head><body style=3D"word-spacing:normal;background-col=
+or:#ffffff;"><div lang=3D"und" dir=3D"auto" style=3D"background-color:#ffff=
+ff;"><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" bgcolor=3D"#111827" align=3D"center" width=3D"600=
+" class=3D"nitro-email-section nitro-email-section--h1 nitro-email-section-=
+type--header-outlook" style=3D"width:600px;"><tr><td style=3D"line-height:0=
+px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div class=3D"n=
+itro-email-section nitro-email-section--h1 nitro-email-section-type--header=
+" style=3D"background:#111827;background-color:#111827;margin:0px auto;max-=
+width:600px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" align=3D"center" style=3D"background:#111827;background-c=
+olor:#111827;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0=
+px;padding:28px 30px 24px;text-align:center;"><!--[if mso | IE]><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><![e=
+ndif]--><!--[if mso | IE]><td style=3D"vertical-align:top;width:600px;"><![=
+endif]--><div class=3D"mj-outlook-group-fix mj-column-per-100" style=3D"fon=
+t-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-alig=
+n:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" width=3D"100%" style=3D"vertical-align:top;"><tbody><=
+tr><td align=3D"center" class=3D"nitro-email-section nitro-email-section--h=
+1 nitro-email-section-type--header" style=3D"font-size:0px;padding:0;word-b=
+reak:break-word;"><div style=3D"font-family:Inter, -apple-system, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;lin=
+e-height:1.1;text-align:center;color:#6366f1;">alikhanpkfhg</div></td></tr>=
+</tbody></table></div><!--[if mso | IE]></td><![endif]--><!--[if mso | IE]>=
+</tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>=
+</td></tr></table><![endif]--><!--[if mso | IE]><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" bgcolor=3D"#111827" alig=
+n=3D"center" width=3D"600" class=3D"nitro-email-section nitro-email-section=
+--t1 nitro-email-section-type--text-outlook" style=3D"width:600px;"><tr><td=
+ style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![e=
+ndif]--><div class=3D"nitro-email-section nitro-email-section--t1 nitro-ema=
+il-section-type--text" style=3D"background:#111827;background-color:#111827=
+;margin:0px auto;max-width:600px;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" align=3D"center" style=3D"background:=
+#111827;background-color:#111827;width:100%;"><tbody><tr><td style=3D"direc=
+tion:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><=
+tr><![endif]--><!--[if mso | IE]><td style=3D"vertical-align:top;width:600p=
+x;"><![endif]--><div class=3D"mj-outlook-group-fix mj-column-per-100" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%" style=3D"vertical-align:top;"><=
+tbody><tr><td align=3D"center" class=3D"nitro-email-section nitro-email-sec=
+tion--t1 nitro-email-section-type--text" style=3D"font-size:0px;padding:8px=
+ 30px 32px 30px;word-break:break-word;"><div style=3D"font-family:Inter, -a=
+pple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16p=
+x;line-height:1.5;text-align:center;color:#ffffff;"><h1 style=3D"font-famil=
+y: Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; =
+font-size: 28px; line-height: 1.08; margin-top: 0; margin-right: 0; margin-=
+bottom: .65em; margin-left: 0">Agent requested this send</h1><p style=3D"ma=
+rgin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-bot=
+tom: 0">Composed by an API-key agent under Safe Mode. The account owner dec=
+ides before it leaves.</p></div></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td><![endif]--><!--[if mso | IE]></tr></table><![endif]--></td></t=
+r></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><!-=
+-[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" align=3D"center" width=3D"600" class=3D"nitro-email-secti=
+on nitro-email-section--f1 nitro-email-section-type--footer-outlook" style=
+=3D"width:600px;"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]--><div class=3D"nitro-email-section nitro-em=
+ail-section--f1 nitro-email-section-type--footer" style=3D"margin:0px auto;=
+max-width:600px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" align=3D"center" style=3D"width:100%;"><tbody><tr><td =
+style=3D"direction:ltr;font-size:0px;padding:24px 20px 32px 20px;text-align=
+:center;"><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation"><tr><![endif]--><!--[if mso | IE]><td style=
+=3D"vertical-align:top;width:600px;"><![endif]--><div class=3D"mj-outlook-g=
+roup-fix mj-column-per-100" style=3D"font-size:0px;text-align:left;directio=
+n:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+" style=3D"vertical-align:top;"><tbody><tr><td align=3D"center" class=3D"ni=
+tro-email-section nitro-email-section--f1 nitro-email-section-type--footer"=
+ style=3D"font-size:0px;padding:10px 25px;word-break:break-word;"><div styl=
+e=3D"font-family:Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial=
+, sans-serif;font-size:12px;line-height:1.5;text-align:center;color:#6d717a=
+;"><p style=3D"font-size:12px;letter-spacing:2px;text-transform:uppercase;f=
+ont-weight:700;margin:0 0 8px 0">alikhanpkfhg</p><p style=3D"margin:0 0 8px=
+ 0">Gujranwala, Punjab, Pakistan</p><p style=3D"margin:0"><a href=3D"https:=
+//api.nitrosend.com/unsubscribe/955e0174-4538-4e2f-93c4-3fa2080f3508" style=
+=3D"color:#6d717a;">Unsubscribe</a><br><span data-nitrosend-branding-contai=
+ner=3D"true" style=3D"display:inline-block;margin-top:12px;"><a href=3D"htt=
+ps://api.nitrosend.com/t/c/eyJfcmFpbHMiOnsiZGF0YSI6eyJhY2NvdW50X2lkIjoxMzQ5=
+MiwiYnJhbmRfaWQiOjEzNjYwLCJ0ZW1wbGF0ZV9pZCI6MjQ3MDMsIm1vZGUiOiJsaXZlIiwibHY=
+iOjIsImZsb3dfaWQiOjE2OTM5LCJhY3Rpb25faWQiOjE2NDE5LCJjb250YWN0X2lkIjo0MDU5MT=
+U3LCJtZXNzYWdlX2lkIjo1MjE1NjE2LCJob3N0IjoiYXBpLm5pdHJvc2VuZC5jb20ifSwiZXhwI=
+joiMjAyNy0wMS0yNVQwMDo0MDoxMC42MjBaIiwicHVyIjoiZW1haWxfdHJhY2tpbmcifX0=3D--=
+98ec1a975a5b5302c87331d61dac56d30863f555?u=3DaHR0cHM6Ly9uaXRyb3NlbmQuY29t&a=
+mp;s=3D41ce5b328e31bb6db29c0d6cf31c1100501fe4c66efdbecdf2dbfc536f534889" da=
+ta-nitrosend-branding=3D"true" data-nitrosend-branding-variant=3D"regular" =
+style=3D"text-decoration:none;color:#000000;font-family:Inter,sans-serif;fo=
+nt-size:16px;"><span style=3D"font-weight:600;">nitrosend</span> <em style=
+=3D"font-style:italic;">it</em><span style=3D"color:#FF4D00;font-weight:600=
+;">.</span></a></span></p></div></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td><![endif]--><!--[if mso | IE]></tr></table><![endif]--></td></t=
+r></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></d=
+iv><img src=3D"https://api.nitrosend.com/t/o/eyJfcmFpbHMiOnsiZGF0YSI6eyJhY2=
+NvdW50X2lkIjoxMzQ5MiwiYnJhbmRfaWQiOjEzNjYwLCJ0ZW1wbGF0ZV9pZCI6MjQ3MDMsIm1vZ=
+GUiOiJsaXZlIiwibHYiOjIsImZsb3dfaWQiOjE2OTM5LCJhY3Rpb25faWQiOjE2NDE5LCJjb250=
+YWN0X2lkIjo0MDU5MTU3LCJtZXNzYWdlX2lkIjo1MjE1NjE2LCJob3N0IjoiYXBpLm5pdHJvc2V=
+uZC5jb20ifSwiZXhwIjoiMjAyNy0wMS0yNVQwMDo0MDoxMC42MjBaIiwicHVyIjoiZW1haWxfdH=
+JhY2tpbmcifX0=3D--98ec1a975a5b5302c87331d61dac56d30863f555" width=3D"1" hei=
+ght=3D"1" border=3D"0" alt=3D""></body></html>
+------=_Part_949176_2003346509.1793061611111--
